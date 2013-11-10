@@ -1,0 +1,25 @@
+<h1>Listing file_containers</h1>
+
+<table>
+  <tr>
+    <th>Display name</th>
+    <th>Folder</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @file_containers.each do |file_container| %>
+  <tr>
+    <td><%= file_container.display_name %></td>
+    <td><%= file_container.folder %></td>
+    <td><%= link_to 'Show', file_container %></td>
+    <td><%= link_to 'Edit', edit_file_container_path(file_container) %></td>
+    <td><%= link_to 'Destroy', file_container, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New File container', new_file_container_path %>
